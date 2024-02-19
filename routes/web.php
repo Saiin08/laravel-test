@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AwardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,5 +18,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
+Route::get('/awards', [AwardController::class, 'index']);
+Route::get('/awards2', [AwardController::class, 'index2']);
