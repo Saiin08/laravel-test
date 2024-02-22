@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AwardController;
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\SongController;
+use App\Http\Controllers\WelcomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +24,15 @@ Route::get('/', function () {
 
 Route::get('/awards', [AwardController::class, 'index']);
 Route::get('/awards2', [AwardController::class, 'index2']);
+
+
+Route::get('/home', function () {
+    return view('home',['name'=>"Saiyin"]);
+});
+
+
+Route::get('/songs',[SongController::class,'index']);
+
+Route::get('/about-us',[AboutController::class,'aboutUs']);
+
+Route::get('/movies', [App\Http\Controllers\IndexController::class, 'index']);
