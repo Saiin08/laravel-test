@@ -13,12 +13,12 @@ class Movie extends Model
         return $this->belongsTo(MovieType::class);
     }
 
-    // public function genres() {
-    //     return $this->belongsToMany(Genre::class);
-    // }
+    public function genres() {
+        return $this->belongsToMany(Genre::class);
+    }
 
-    // public function people() {
-    //     return $this->belongsToMany(People::class, "movie_person", "movie_id", "person_id");
-    // }
+    public function people() {
+        return $this->belongsToMany(Person::class, "movie_person", "movie_id", "person_id");
+    }
 
 }

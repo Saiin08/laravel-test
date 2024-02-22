@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AwardController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\MovieController;
 use App\Http\Controllers\MovieRequestController;
 use App\Http\Controllers\SongController;
 use App\Http\Controllers\WelcomeController;
@@ -36,6 +37,8 @@ Route::get('/songs',[SongController::class,'index']);
 
 Route::get('/about-us',[AboutController::class,'aboutUs']);
 
-Route::get('/movies', [App\Http\Controllers\IndexController::class, 'index']);
+Route::get('/movie', [IndexController::class, 'index']);
 
 Route::get('/movie-request',[MovieRequestController::class,'index'])->name('movie-request');
+
+Route::get('/movies', [MovieController::class, 'index']);
