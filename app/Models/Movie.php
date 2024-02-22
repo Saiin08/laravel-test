@@ -21,4 +21,8 @@ class Movie extends Model
         return $this->belongsToMany(Person::class, "movie_person", "movie_id", "person_id");
     }
 
+    public function reviews(){
+        return $this->hasMany(Review::class);
+    }
+
 }
